@@ -10,14 +10,14 @@
  
   },
   "dependencies": {
-    "express": "^4.13.3"
-	"mongodb": "^2.2.1"
+    "express": "^4.13.3",
+	"mongodb": "2.2.1",
 	"ejs": "*"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
 	"body-parser":"^1.15.2"
 	
 	
