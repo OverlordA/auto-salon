@@ -39,6 +39,7 @@ app.get('/', function(req, res) {
 app.post('/sedan', (req, res) => {
 	assert.equal(null, err);
 	console.log("Connected correctly to server");
+	
 	collection.find({type:"седан"},{_id:0}).toArray(function(err, results) {
         console.log(results[0]);
 		
@@ -66,6 +67,8 @@ app.post('/sedan', (req, res) => {
 		var transmision3 = "механічна";
 		var privod3 = "передній";
 		var vitraty3  = "4л.100км";
+		
+		res.render('cars', results);
 		
 		res.render('car', { 
 		imgs1:imgs1,
