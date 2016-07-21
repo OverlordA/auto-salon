@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="styles/registration_style.css" rel="stylesheet" type="text/css"/>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="script/registration.js"></script>
+		<title>
+			Форма реєстрації
+		</title>
+	</head>
+	<body>
+		<form action="/regform" method="POST"><view>
+			Імя:	<input type="text" placeholder="name" name = "name"><br/>
+			Прізвище:	<input type="text" placeholder="surname" name = "surname"><br/>
+			По батькові:	<input type="text" placeholder="fathername" name = "fathername"><br/>
+			Серія та номер паспорта:	<input type="text" placeholder="pasport" name = "pasport"><br/>
+			Ким коли виданий:	<input type="text" name = "published"><br/>
+			Дата народження:	<input type="data" placeholder="birthday" name = "birthday"><br/>
+			водійське посвідчення:	<input type="text" placeholder="drivelicence" name = "drivelicence"><br/>
+		</view>
+		<hr/>
+		 Автомобіль <%=model%><br/>
+			<button type="submit">Зареєструватись</button>
+		</form>
+	
+	</body>
+</html>

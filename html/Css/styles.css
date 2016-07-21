@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+*{
+	font-family: "Roboto Condensed",Arial,sans-serif;
+}
+
+
+button {
+ border-radius: 15px;
+ background-color:#A4A9C0;
+
+
+}
+
+html{
+	background-color:#D9E1F2;
+}
