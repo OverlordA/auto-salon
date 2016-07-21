@@ -13,48 +13,33 @@
 	<body>
 	<table border="2" align="center">
 	<tr>
-		<td>
-		<form action="/choiscar" method="POST"><button type="submit">
-			<img src=<%=imgs1%> height="250" id="second"/><br/>
+		
+		  
+<% for(var i=0; i<results.length; i++) {%>
+<td>
+<form action="/choiscar" method="POST"><button type="submit">
+			<img src=<%= results[i].urlimg%> height="250" id="second"/><br/>
 			</button></form>
-			
-			тип автомобіля <%=typeavto1 %><br/>
-			Пробіг <%=probig1 %><br/>
-			тип та обєм двигуна <%=typeengine1 %><br/>
-			Трансмісія <%=transmision1 %><br/>
-			Привід <%=privod1 %><br/>
-			Витрата палива <%=vitraty1 %><br/>
-			
-			
-		</td>
-		<td>
-			<form action="/choiscar" method="POST"><button type="submit">
-			<img src=<%=imgs2%> height="250" id="second"/><br/>
-			</button></form>
-			тип автомобіля <%=typeavto2 %>  <br/>
-			Пробіг <%=probig2 %><br/>
-			тип та обєм двигуна <%=typeengine2 %><br/>
-			Трансмісія <%=transmision2 %><br/>
-			Привід <%=privod2 %><br/>
-			Витрата палива <%=vitraty2 %><br/>
-			
-		</td>
-		<td>
-		<form action="/choiscar" method="POST"><button type="submit">
-			<img src=<%=imgs3%> height="250" id="second"/><br/>
-			</button></form>
-			
-			тип автомобіля <%=typeavto3 %><br/>
-			Пробіг <%=probig3 %><br/>
-			тип та обєм двигуна <%=typeengine3 %><br/>
-			Трансмісія <%=transmision3 %><br/>
-			Привід <%=privod3 %><br/>
-			Витрата палива <%=vitraty3 %><br/>
-			
-		</td>
+   Тип автомобіля <%= results[i].type%><br/>
+   Модель <%= results[i].model%><br/>
+   Пробіг <%= results[i].probig%><br/>
+   Тип та обєм двигуна <%= results[i].engine%><br/>
+    Коробка передач <%= results[i].transmision%><br/>
+	 Привід <%= results[i].privod%><br/>
+	  Витарата палива <%= results[i].fuelcost%><br/>
+  <br/>
+ 
+ </td>
+	  <% } %>
+
+		
 	</tr>
 	
+	
+	
 	</table>
+	
+
 	</body>
 
 

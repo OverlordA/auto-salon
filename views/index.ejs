@@ -18,61 +18,19 @@
 	
 <table border="2px" align="center">
 	 <tr>
-	 	<th>
+	 	
+	<% for(var i=0; i<results.length; i++) {%>
+	<td>
 <form action="/sedan" method="POST">
 	<button type="submit" name="button1">
-		<image src=<%=imgtype1%> height="100px" width="200px"><br/>
-		<b> <%=type1 %> </b>
+		<image src=<%=results[i].urlimg%> height="100px" width="200px"><br/>
+		<b> <%=results[i].type%> </b>
 	</button>
 </form>
-		</th>
-		<th>
-<form action="/hetchbac" method="POST"><button type="submit" id="button2">
-    <image src=<%=imgtype2%> height="100px" width="200px"><br/>
-    <b><%=type2 %> </b>
-</button></form>
-</th>
-<th>
-<form action="/sedan" method="POST"><button type="submit" id="button3">
-    <image src="krosover.png" height="100px" width="200px"><br/>
-    <b>Кросовер</b>
-</button><br/></form>
-</th>
- </tr>
-  <tr>
-  	<th>
-<form action="/sedan" method="POST"><button type="submit" id="button4">
-    <image src="cupe.png" height="100px" width="200px"><br/>
-    <b>Купе</b>
-</button></form>
-</th>
-<th>
+</td>
+ <% } %>
 
-<form action="/sedan" method="POST"><button type="submit" id="button5">
-    <image src="turk.png" height="100px" width="200px"><br/>
-    <b>Вантажні авто</b>
-</button></form>
-</th>
-<th>
-<form action="/sedan" method="POST"><button type="submit" id="button6">
-    <image src="cabriolet.png" height="100px" width="200px"><br/>
-    <b>Кабріолет</b>
-</button></form><br/>
-</th>
- </tr>
-  <tr >
-  	<th>
-<form action="/sedan" method="POST"><button type="submit" id="button7">
-    <image src="miniven.png" height="100px" width="200px"><br/>
-    <b>Мінівен</b>
-</button></form>
-</th>
-<th>
-<form action="/sedan" method="POST"><button type="submit" id="button8">
-    <image src="universal.png" height="100px" width="200px"><br/>
-    <b>Універсал</b>
-</button></form>
-</th>
+		
  </tr>
 </table>
 
