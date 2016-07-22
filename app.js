@@ -50,11 +50,23 @@ app.post('/sedan', (req, res) => {
 
 	 });
 
+//таблиця
 
-  
- 
+/*
+	app.post('/graphic', (req, res) => {
+var collection = db.collection('graphic');
+	assert.equal(null, err);
+	console.log("Connected correctly to server");
+	
+	collection.find({},{_id:0}).toArray(function(err, results) {
+    //    console.log(results[0]);
+	
+		res.render('graphic_car', {results:results});
+	
+    });
+});
 	 
-	 
+	*/ 
 	 
 });
 
@@ -66,22 +78,7 @@ app.post('/choiscar', (req, res) => {
 	
 	
 	});
-/*
 
-	app.post('/graphic', (req, res) => {
-var collection = db.collection('auto-grafic');
-	assert.equal(null, err);
-	console.log("Connected correctly to server");
-	
-	collection.find({},{_id:0}).toArray(function(err, results) {
-    //    console.log(results[0]);
-	
-		res.render('graphic_car', {results:results});
-	
-    });
-
-});
-	*/
 	app.post('/regform', (req, res) => {
  console.log(req.body);
   

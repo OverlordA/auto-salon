@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="en"> 
+<html> 
 	<head>
 		<title>
 			Графік тестів автомобілів
@@ -8,41 +8,25 @@
 	<body>
 <h1 align="center">виберіть зручний час тестдрайву</h1>
 
-<form action="/sedan" method="POST">
+<table border="2" align="center">
+	<tr>
 
+	<% for(var i=0; i<results.length; i++) {%>
 
-	<table border="3">
-		<% for(var i=0; i<results.length; i++) {%>
-<tr>
 	<td>
-	<button type="submit" name="button1">
-	<%=results[i].g8%>
-	</button>
-</td>
-<td>
-	<button type="submit" name="button1">
-	<%=results[i].g9%>
-	</button>
-</td>
-<td>
-	<button type="submit" name="button1">
-	<%=results[i].g10%>
-	</button>
-</td>
-<td>
-	<button type="submit" name="button1">
-	<%=results[i].g11%>
-	</button>
-</td>
-<td>
-	<button type="submit" name="button1">
-	<%=results[i].g12%>
-	</button>
-</form>
-</td>
+		<b><%=results[i].day%></b></br>
+		<button>8:00</br><%=results[i].g8%></button></br>
+		<button>9:00</br><%=results[i].g9%></button></br>
+		<button>10:00</br><%=results[i].g10%></button></br>
+		<button>11:00</br><%=results[i].g11%></button></br>
+		<button>12:00</br><%=results[i].g12%></button></br>
+		<button>13:00</br><%=results[i].g13%></button></br>
+	</td>
+
+ 	<% } %>
 </tr>
- <% } %>
 </table>
+
 
 	</body>	
 </html>
