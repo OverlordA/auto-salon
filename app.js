@@ -53,13 +53,14 @@ app.post('/categories', (req, res) => {
 
 //таблиця
 
-/*
+
 	app.post('/graphic', (req, res) => {
-var collection = db.collection('graphic');
+
+	var collection = db.collection('avto');
 	assert.equal(null, err);
 	console.log("Connected correctly to server");
 	
-	collection.find({},{_id:0}).toArray(function(err, results) {
+	collection.find({model:"akcent"},{_id:0}).toArray(function(err, results) {
     //    console.log(results[0]);
 	
 		res.render('graphic_car', {results:results});
@@ -67,8 +68,9 @@ var collection = db.collection('graphic');
     });
 });
 	 
-	*/ 
+	
 	 
+
 
 app.post('/choiscar', (req, res) => {
 	console.log(req.body.model);

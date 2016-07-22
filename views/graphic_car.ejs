@@ -8,25 +8,24 @@
 	<body>
 <h1 align="center">виберіть зручний час тестдрайву</h1>
 
-<table border="2" align="center">
-	<tr>
 
-	<% for(var i=0; i<results.length; i++) {%>
-
-	<td>
-		<b><%=results[i].day%></b></br>
-		<button>8:00</br><%=results[i].g8%></button></br>
-		<button>9:00</br><%=results[i].g9%></button></br>
-		<button>10:00</br><%=results[i].g10%></button></br>
-		<button>11:00</br><%=results[i].g11%></button></br>
-		<button>12:00</br><%=results[i].g12%></button></br>
-		<button>13:00</br><%=results[i].g13%></button></br>
+	<table border="2">
+ <tr><td>понеділок</td> <td>вівторок</td><td> середа</td> <td>четверг</td><td> пятниця </td></tr>
+ <tr>
+	<% for(var i=0; i<5; i++) {%>
+ <td>
+		<button>08:00</br> <%=results[0].graphic[i].time8%></button></br>
+		<button>09:00</br> <%=results[0].graphic[i].time9%></button></br>
+		<button>10:00</br> <%=results[0].graphic[i].time10%></button></br>
+		<button>11:00</br> <%=results[0].graphic[i].time11%></button></br>
+		<button>12:00</br> <%=results[0].graphic[i].time12%></button></br>
+		<button>13:00</br> <%=results[0].graphic[i].time13%></button></br>
+		<button>14:00</br> <%=results[0].graphic[i].time14%></button></br>
 	</td>
-
  	<% } %>
+
 </tr>
 </table>
-
 
 	</body>	
 </html>
