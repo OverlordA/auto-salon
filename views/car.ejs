@@ -17,9 +17,10 @@
 		  
 <% for(var i=0; i<results.length; i++) {%>
 <td>
-<form action="/choiscar" method="POST"><button type="submit">
+<form action="/choiscar" method="POST"><button type="submit" name="model"value=<%= results[i].model%>>
 			<img src=<%= results[i].urlimg%> height="250" id="second"/><br/>
-			</button></form>
+		</button>
+			</form>
    Тип автомобіля <%= results[i].type%><br/>
    Модель <%= results[i].model%><br/>
    Пробіг <%= results[i].probig%><br/>

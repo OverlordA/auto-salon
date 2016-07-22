@@ -36,12 +36,13 @@ app.get('/', function(req, res) {
 
 
 
-app.post('/sedan', (req, res) => {
+app.post('/categories', (req, res) => {
+	
 	var collection = db.collection('avto');
 	assert.equal(null, err);
 	console.log("Connected correctly to server");
 	
-	collection.find({type:"седан"},{_id:0}).toArray(function(err, results) {
+	collection.find({type:req.body.type}).toArray(function(err, results) {
     //    console.log(results[0]);
 	
 		res.render('car', {results:results});
@@ -68,16 +69,32 @@ var collection = db.collection('graphic');
 	 
 	*/ 
 	 
+
+app.post('/choiscar', (req, res) => {
+	console.log(req.body.model);
+	
+
+	var collection = db.collection('avto');
+	assert.equal(null, err);
+	console.log("Connected correctly to server");
+
+	 collection.find({model:req.body.model}).toArray(function(err, results){
+	
+	res.render('registration', {results:results});
+	
+    });
+	
+	
+		
+	
+	});
+
+
+
 });
 
 
-app.post('/choiscar', (req, res) => {
-	var model = "honda civic";
-	res.render('registration', {model:model });
-	
-	
-	
-	});
+
 
 	app.post('/regform', (req, res) => {
  console.log(req.body);

@@ -21,8 +21,8 @@
 	 	
 	<% for(var i=0; i<results.length; i++) {%>
 	<td>
-<form action="/sedan" method="POST">
-	<button type="submit" name="button1">
+<form action="/categories" method="POST">
+	<button type="submit" name="type" value=<%=results[i].type%>>
 		<image src=<%=results[i].urlimg%> height="100px" width="200px"><br/>
 		<b> <%=results[i].type%> </b>
 	</button>
