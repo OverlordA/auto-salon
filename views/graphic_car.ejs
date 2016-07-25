@@ -9,21 +9,24 @@
 <h1 align="center">виберіть зручний час тестдрайву</h1>
 
 
-	<table border="2">
+	<table border="2" align="center">
  <tr><td>понеділок</td> <td>вівторок</td><td> середа</td> <td>четверг</td><td> пятниця </td></tr>
  <tr>
 	<% for(var i=0; i<5; i++) {%>
- <td>
-		<button>08:00</br> <%=results[0].graphic[i].time8%></button></br>
-		<button>09:00</br> <%=results[0].graphic[i].time9%></button></br>
-		<button>10:00</br> <%=results[0].graphic[i].time10%></button></br>
-		<button>11:00</br> <%=results[0].graphic[i].time11%></button></br>
-		<button>12:00</br> <%=results[0].graphic[i].time12%></button></br>
-		<button>13:00</br> <%=results[0].graphic[i].time13%></button></br>
-		<button>14:00</br> <%=results[0].graphic[i].time14%></button></br>
+ <td><form action="/formrender" method="POST" >
+ 		<button type="submit" name="model" value=<%= results[0].model%>>08:00</br> <%=results[0].graphic[i].time8%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>09:00</br> <%=results[0].graphic[i].time9%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>10:00</br> <%=results[0].graphic[i].time10%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>11:00</br> <%=results[0].graphic[i].time11%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>12:00</br> <%=results[0].graphic[i].time12%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>13:00</br> <%=results[0].graphic[i].time13%></button></br>
+		<button type="submit" name="model" value=<%= results[0].model%>>14:00</br> <%=results[0].graphic[i].time14%></button></br>
+	
+		</form>
 	</td>
  	<% } %>
-
+	
+ 
 </tr>
 </table>
 

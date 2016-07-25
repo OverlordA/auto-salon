@@ -19,7 +19,7 @@ var MongoClient = require('mongodb').MongoClient
 	
 	
 app.get('/', function(req, res) {
-	var collection = db.collection('categories_auto');
+	var collection = db.collection('categories');
 		assert.equal(null, err);
 		console.log("Connected correctly to server");
 		collection.find({},{_id:0}).toArray(function(err, results) {
@@ -38,7 +38,7 @@ app.get('/', function(req, res) {
 
 app.post('/categories', (req, res) => {
 	
-	var collection = db.collection('avto');
+	var collection = db.collection('auto');
 	assert.equal(null, err);
 	console.log("Connected correctly to server");
 	
@@ -54,47 +54,39 @@ app.post('/categories', (req, res) => {
 //таблиця
 
 
-	app.post('/graphic', (req, res) => {
+	app.post('/formrender', (req, res) => {
+		//console.log(req.body.model);
+	
+var modelavto = req.body.model;
 
-	var collection = db.collection('avto');
-	assert.equal(null, err);
-	console.log("Connected correctly to server");
+		res.render('registration', {modelavto:modelavto});
 	
-	collection.find({model:"akcent"},{_id:0}).toArray(function(err, results) {
-    //    console.log(results[0]);
-	
-		res.render('graphic_car', {results:results});
-	
-    });
+  
 });
-	 
-	
-	 
+
+   
+
 
 
 app.post('/choiscar', (req, res) => {
 	console.log(req.body.model);
 	
 
-	var collection = db.collection('avto');
+	var collection = db.collection('auto');
 	assert.equal(null, err);
 	console.log("Connected correctly to server");
 
 	 collection.find({model:req.body.model}).toArray(function(err, results){
 	
-	res.render('registration', {results:results});
-	
-    });
-	
-	
-		
+	res.render('graphic_car', {results:results});
 	
 	});
 
-
-
 });
 
+	 
+// conect 
+});
 
 
 
@@ -104,7 +96,7 @@ app.post('/choiscar', (req, res) => {
   // добавлення дока
   var insertDocuments = function(db, callback) {
   // Get the documents collection 
-  var collection = db.collection('registration');
+  var collection = db.collection('users');
   // Insert some documents 
   collection.insertOne(
   req.body, function(err, result) {
@@ -116,19 +108,15 @@ app.post('/choiscar', (req, res) => {
   });
 }
   
-
-  MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected correctly to server");
   
   insertDocuments(db, function() {
     db.close();
 	
-  });
+ 
 }); 
 
-  
-})
+	 
+});
 
 
 
