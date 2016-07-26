@@ -14,9 +14,11 @@
 	<% for(var i=0; i<5; i++) {%>
  <td><form action="/formrender" method="POST" >
  	 	<% for(var j=0; j<7; j++) {%>
- 		<button type="submit" name="model" value=<%= results[0].model%> <% if (results[0].graphic[i][j].emploi == 'true') {%>style="color: red"<% } else { %>style="color: green"<% } %>> <%= results[0].graphic[i][j].time%></br> 	
+ 		<button  type="submit" name="times" value=<%= results[0].graphic[i][j].time%> <%if (results[0].graphic[i][j].emploi == 'true'){%>style="color: red"<% } else { %>style="color: green"<% } %>>
+ 		 <%= results[0].graphic[i][j].time%>	
  		</button></br>
 		<% } %>
+		<input type='hidden' name='model' value=<%= results[0].model%> />
 		</form>
 	</td>
  	<% } %>

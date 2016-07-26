@@ -55,6 +55,7 @@ MongoClient.connect(url, function(err, db) {
 		//console.log(req.body.model);
  
 
+
 		var collection = db.collection('auto');
 		assert.equal(null, err);
 		console.log("Connected correctly to server");
@@ -72,9 +73,10 @@ MongoClient.connect(url, function(err, db) {
 		//console.log(req.body.model);
 	
 		var modelavto = req.body.model;
-		//var timeauto = req.body.element;
+		var timeavto = req.body.times;
+	
 
-		res.render('registration', {modelavto:modelavto});
+		res.render('registration', {modelavto:modelavto, timeavto:timeavto});
 	
 	});
 
