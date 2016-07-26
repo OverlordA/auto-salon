@@ -8,25 +8,20 @@
 	<body>
 <h1 align="center">виберіть зручний час тестдрайву</h1>
 
-
 	<table border="2" align="center">
  <tr><td>понеділок</td> <td>вівторок</td><td> середа</td> <td>четверг</td><td> пятниця </td></tr>
  <tr>
 	<% for(var i=0; i<5; i++) {%>
  <td><form action="/formrender" method="POST" >
- 		<button type="submit" name="model" value=<%= results[0].model%>>08:00</br> <%=results[0].graphic[i].time8%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>09:00</br> <%=results[0].graphic[i].time9%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>10:00</br> <%=results[0].graphic[i].time10%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>11:00</br> <%=results[0].graphic[i].time11%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>12:00</br> <%=results[0].graphic[i].time12%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>13:00</br> <%=results[0].graphic[i].time13%></button></br>
-		<button type="submit" name="model" value=<%= results[0].model%>>14:00</br> <%=results[0].graphic[i].time14%></button></br>
-	
+ 	 	<% for(var j=0; j<7; j++) {%>
+ 		<button type="submit" name="model" value=<%= results[0].model%> <% if (results[0].graphic[i][j].emploi == 'true') {%>style="color: red"<% } else { %>style="color: green"<% } %>> <%= results[0].graphic[i][j].time%></br> 	
+ 		</button></br>
+		<% } %>
 		</form>
 	</td>
  	<% } %>
 	
- 
+
 </tr>
 </table>
 

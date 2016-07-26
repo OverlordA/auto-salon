@@ -52,8 +52,8 @@ MongoClient.connect(url, function(err, db) {
 
 	// після вибору авто виведення графіку тест драйвів
 	app.post('/choiscar', (req, res) => {
-		console.log(req.body.model);
-	
+		//console.log(req.body.model);
+ 
 
 		var collection = db.collection('auto');
 		assert.equal(null, err);
@@ -72,6 +72,7 @@ MongoClient.connect(url, function(err, db) {
 		//console.log(req.body.model);
 	
 		var modelavto = req.body.model;
+		//var timeauto = req.body.element;
 
 		res.render('registration', {modelavto:modelavto});
 	
