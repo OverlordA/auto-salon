@@ -70,13 +70,33 @@ MongoClient.connect(url, function(err, db) {
 
 	//виведення форми для реєстрації користувачів
 	app.post('/formrender', (req, res) => {
+/*
+var updateDocument = function(db, callback) {
+  // Get the documents collection 
+  var collection = db.collection('auto');
+  // Update document where a is 2, set b equal to 1 
+  collection.updateOne({ model: 'akcent'}
+    , { $set: {graphic[0].[0].emploi:'true'} }, function(err, result) {
+    assert.equal(err, null);
+    assert.equal(1, result.result.n);
+    console.log("Updated the document ");
+    callback(result);
+  });  
+}
+ updateDocument(db, function() {
+     
+    });
+
+*/
+
 		//console.log(req.body.model);
-	
+	 console.log(req.body.i);
 		var modelavto = req.body.model;
 		var timeavto = req.body.times;
+		var markaavto = req.body.marka;
 	
 
-		res.render('registration', {modelavto:modelavto, timeavto:timeavto});
+		res.render('registration', {modelavto:modelavto, timeavto:timeavto, markaavto:markaavto});
 	
 	});
 
