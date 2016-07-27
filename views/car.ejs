@@ -17,7 +17,7 @@
 		  
 <% for(var i=0; i<results.length; i++) {%>
 <td>
-<form action="/choiscar" method="POST"><button type="submit" name="model"value=<%= results[i].model%>>
+<form action="/choiscar" method="POST"><button type="submit" name="auto_id" value=<%=results[i]._id%>>
 			<img src=<%= results[i].urlimg%> height="250" id="second"/><br/>
 		</button>
 			</form>

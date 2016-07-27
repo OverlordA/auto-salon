@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+		<title>
+			Графік тестів автомобілів
+		</title>	
+	</head>
+	<body>
+<h1 align="center">виберіть зручний час тестдрайву</h1>
+
+	<table border="2" align="center">
+ <tr><td><%=results[0].date%></br>середа</td> <td>вівторок</td><td> середа</td> <td>четверг</td><td> пятниця </td></tr>
+ <tr>
+	
+ <td>
+ 	 	<% for(var i=0; i<7; i++) {%>
+ 	 	<form action="/formrender" method="POST" >
+ 		<button  type="submit" name="times" value="" >
+ 			<%=i+8%>:00
+ 		</button></br>
+ 		<% } %>
+	</td>
+ 	
+
+
+	
+	id авто  <%=results[0].id_car%></br>
+</tr>
+</table>
+
+	</body>	
+</html>

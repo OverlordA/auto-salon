@@ -9,9 +9,10 @@ app.use(express.static('html/car')); // папка з статичними ел�
 app.set('views',(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
-var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+var MongoDriver = require('mongodb');
+var MongoClient = MongoDriver.MongoClient, assert = require('assert');
 var url = 'mongodb://192.168.2.108/auto';
+var ObjectId = MongoDriver.ObjectID;
 
 // підключення до монго сервера
 MongoClient.connect(url, function(err, db) { 
@@ -52,17 +53,20 @@ MongoClient.connect(url, function(err, db) {
 
 	// після вибору авто виведення графіку тест драйвів
 	app.post('/choiscar', (req, res) => {
-		//console.log(req.body.model);
- 
+		console.log(req.body.auto_id);
+		var day, month; 
+ 		var now = new Date();
+	
+		console.log(now);
 
 
-		var collection = db.collection('auto');
+		var collection = db.collection('schedule');
 		assert.equal(null, err);
 		console.log("Connected correctly to server");
 
-	 	collection.find({model:req.body.model}).toArray(function(err, results){
+	 	collection.find({id_car : ObjectId(req.body.auto_id)}).toArray(function(err, results){
 	
-			res.render('graphic_car', {results:results});
+			res.render('schedule', {results:results});
 	
 		});
 
@@ -90,13 +94,13 @@ var updateDocument = function(db, callback) {
 */
 
 		//console.log(req.body.model);
-	 console.log(req.body.i);
-		var modelavto = req.body.model;
-		var timeavto = req.body.times;
-		var markaavto = req.body.marka;
+	 //console.log(req.body.i);
+		//var modelavto = req.body.;
+		//var timeavto = req.body.times;
+		//var markaavto = req.body.marka;
 	
 
-		res.render('registration', {modelavto:modelavto, timeavto:timeavto, markaavto:markaavto});
+		res.render('registration', { });
 	
 	});
 

@@ -15,18 +15,19 @@
  <td>
  	 	<% for(var j=0; j<7; j++) {%>
  	 	<form action="/formrender" method="POST" >
- 		<button  type="submit" name="times" value=<%= results[0].graphic[i][j].time%> <%if (results[0].graphic[i][j].emploi == 'true'){%>style="color: red"<% } else { %>style="color: green"<% } %>>
- 		 <%= results[0].graphic[i][j].time%>	
+ 		<button  type="submit" name="times" value="00:00" >
+ 			00:00
  		</button></br>
 
 		<% } %>
-		<input type='hidden' name='i' value=<%=i%> />
-		<input type='hidden' name='model' value=<%= results[0].model%> />
-		<input type='hidden' name='marka' value=<%= results[0].marka%> />
+		
 		</form>
 	</td>
  	<% } %>
 	
+	тип авто <%=result[0].type%>
+	марка авто <%=result[0].marka%>
+	модель авто <%=result[0].model%>
 
 </tr>
 </table>
